@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
   }
 
   /* Build the pipeline */
-  gst_bin_add_many(GST_BIN(pipeline), source, sink, NULL);
+  gst_bin_add_many(GST_BIN(pipeline), source, sink, NULL);  // 使用前要把elements加入到pipeline
   if (gst_element_link(source, sink) != TRUE) {
     g_printerr("Elements could not be linked.\n");
     gst_object_unref(pipeline);
